@@ -1,0 +1,97 @@
+irb --simple-prompt
+
+
+
+STRINGS
+comment = "This is my comment"
+comment.upcase == Upper Case
+comment.upcase! == Upper Case and modify the value
+string.length
+string.reverse
+to_s == to string
+to_i == to integer
+to_f == to float
+.*() == operator :D
+var time = Time.new
+time.hour
+time.minute
+string.center =: Center the string in 10 characters
+string.ljust(30, '.'): Creates a line of 30 characters, and fills with dots
+string.rjust(30, '.'): Creates a line of 30 characters, and fills with dots
+
+comment.class == Prints the class name
+
+
+
+.to_s ==> Convert number to string
+.object_id == This gets the object id
+
+- You can use #{var} with " but not with '
+puts "This is var: #{movie}"
+puts 'This is var: #{movie}' ==> This wont print the movie variable
+Using #{number} no need to call .to_s and you can also add operations
+"I love this\'movie: " == You can scape characters only with double quotes
+'I love this\'movie: ' == With single quotes you can't scape characters
+
+You can assign one variable to another. In this case, if you modify one string, it gets modified for both.
+However, if you change assign a new value to the variable, then the second variable will hold a different value
+
+- ri string: Documentatio for string
+- Methods with ? returns boolen. string.include?(a), string.startswith?(), string,empty?
+- Methos with ! at the end will replace the variable with the output
+
+Puts is a method, the receiver or object calling puts is SELF, which is main and it is of class OBJECT.
+Every method is called from an object, even if it is not estrictly declared.
+
+Methods:
+	Can have default parameters, ven default values thad are taken from other params
+
+Classes;
+class Movie
+	def initialize(_title, _rank=5)
+		@title = _title.capitalize
+		@rank = _rank
+	end
+	
+	def listing
+		"New Movie! Title: #{@title} - Rank: #{@rank} \#{@test}*"
+	end
+	
+	def thumbs_up
+		@rank +=1
+		self
+	end
+	
+	def thumbs_down
+		@rank -=1
+		self
+	end
+	
+	def to_s
+		listing
+	end
+end
+
+@title --> instance variable
+
+class CoolMovie
+	def initialize(_title, _rank = 10)
+		@title = _title.capitalize
+		@rank = _rank
+	end
+	
+	def title=(newTitle)
+		@title = newTitle
+	end
+	
+	def title
+		@title
+	end
+	
+	attr_accessor :rank
+	attr_reader :title
+	attr_writer :title
+	
+end
+
+Arrays holds references to objects! No objects itself
