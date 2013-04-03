@@ -2,8 +2,13 @@ class Movie
 	def initialize(_title, _rank = 10)
 		@title = _title.capitalize
 		@rank = _rank
+		@snack_carbs = Hash.new(0)
 	end
 	
+	def ate_snack(snack)
+		@snack_carbs[snack.name] += snack.carbs
+		puts "I just ate #{snack.name} and total I have consumed #{@snack_carbs[snack.name]} calories"
+	end
 	def title
 		@title
 	end

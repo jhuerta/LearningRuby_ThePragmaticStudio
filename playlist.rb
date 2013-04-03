@@ -1,5 +1,6 @@
 require_relative 'movie'
 require_relative 'movie_reviewer'
+require_relative 'snack_bar'
 
 class PlayList
 	def initialize(_title)
@@ -12,13 +13,20 @@ class PlayList
 	end
 		
 	def play(viewings)
+		snack = SnackBar::SNACKS
+
+		snack.each do |s|
+			puts "#{s.name} and #{s.carbs} carbohidrates"
+		end
+		puts "There are #{snack.size} snacks"
 		1.upto(viewings) do |count|
 			puts "\nViewing #{count}: "
 			@movieList.each do |movie|
+				movie.ate_snack(SnackBar.random)
 				MovieReviewer.ReviewMovie(movie)
 				puts movie
 			end		
-		end
+		end 
 	end
 	
 	def printStats 

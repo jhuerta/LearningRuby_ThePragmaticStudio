@@ -10,6 +10,7 @@ b = Movie.new("b", 2)
 c = Movie.new("c", 4)
 d = Movie.new("d", 6)
 e = Movie.new("e", 0)
+f = Movie.new("e", 10)
 
 
 actionMovies = PlayList.new("Action Movies")
@@ -24,5 +25,7 @@ actionMovies.AddMovie(goonies)
 actionMovies.AddMovie(godfather)
 actionMovies.AddMovie(ghostbuster)
 
-actionMovies.play(15)
-actionMovies.printStats
+# actionMovies.play(15)
+# actionMovies.printStats
+
+actionMovies.play(1)
